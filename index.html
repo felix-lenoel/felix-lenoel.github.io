@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Economist</title>
+  <meta name="description" content="Personal page of Your Name, economist working on labor and public economics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafbfc;
+      --ink: #1b2430;
+      --muted: #5b6672;
+      --line: #dde3e8;
+      --accent: #1f5f6b;
+      --accent-ink: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12181f;
+        --ink: #e8edf1;
+        --muted: #9aa6b1;
+        --line: #2a343e;
+        --accent: #6cb6c4;
+        --accent-ink: #12181f;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 12vh 1.5rem 6rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .side img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px;
+      background: var(--line);
+      display: block;
+    }
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 0;
+      font-size: 0.9rem;
+    }
+    .links li { padding: 0.35rem 0; border-top: 1px solid var(--line); }
+    .links li:last-child { border-bottom: 1px solid var(--line); }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5rem;
+    }
+    .role { color: var(--muted); margin: 0 0 2rem; }
+    .bio { max-width: 62ch; }
+    .bio p { margin: 0 0 1.1rem; }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.3rem;
+      background: var(--accent);
+      color: var(--accent-ink);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 3px;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    footer {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    @media (max-width: 720px) {
+      main { grid-template-columns: 1fr; gap: 2rem; padding-top: 8vh; }
+      .side img { max-width: 220px; }
+      h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <aside class="side">
+      <img src="photo.jpg" alt="Portrait of Your Name">
+      <ul class="links">
+        <li><a href="mailto:your.email@university.edu">your.email@university.edu</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="https://ideas.repec.org/">RePEc / IDEAS</a></li>
+        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+      </ul>
+    </aside>
+
+    <section>
+      <h1>Your Name</h1>
+      <p class="role">Position, Department of Economics, Institution</p>
+
+      <div class="bio">
+        <p>I am an economist working on labor and public economics. My research focuses on minimum wage policy and how taxes and transfers shape the incentives that workers face.</p>
+        <p>I am currently based in Milan, Italy. Before this, I [add a sentence about your background: PhD, previous positions, where you studied].</p>
+        <p>You can reach me by email at <a href="mailto:your.email@university.edu">your.email@university.edu</a>.</p>
+      </div>
+
+      <a class="btn" href="cv.pdf" download>Download my CV (PDF)</a>
+    </section>
+
+    <footer>Last updated: November 2026</footer>
+  </main>
+</body>
+</html>
