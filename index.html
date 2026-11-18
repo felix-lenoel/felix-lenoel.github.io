@@ -3,49 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name – Economist</title>
-  <meta name="description" content="Personal page of Your Name, economist working on labor and public economics.">
+  <title>Félix Lenoël – Economist</title>
+  <meta name="description" content="Personal page of Félix Lenoël, predoctoral researcher in labor and public economics at Bocconi University.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fafbfc;
-      --ink: #1b2430;
-      --muted: #5b6672;
-      --line: #dde3e8;
+      --bg: #f6f1e4;
+      --ink: #26231d;
+      --muted: #6b655a;
+      --line: #ddd5c2;
       --accent: #1f5f6b;
       --accent-ink: #ffffff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #12181f;
-        --ink: #e8edf1;
-        --muted: #9aa6b1;
-        --line: #2a343e;
-        --accent: #6cb6c4;
-        --accent-ink: #12181f;
-      }
+      --pad: clamp(1.25rem, 5vw, 4rem);
     }
     * { box-sizing: border-box; }
-    html { font-size: 17px; }
+    html { font-size: 18px; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      line-height: 1.7;
     }
-    main {
-      max-width: 880px;
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, .btn:focus-visible, .icons a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Top bar, full width */
+    .topbar {
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 12vh 1.5rem 6rem;
+      padding: 1.1rem var(--pad);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .topbar .brand {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .topbar nav a {
+      margin-left: 1.75rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .topbar nav a:hover { color: var(--accent); }
+
+    /* Main content */
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: clamp(3rem, 9vh, 6rem) var(--pad) 6rem;
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 3.5rem;
+      grid-template-columns: minmax(240px, 320px) 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
       align-items: start;
     }
-    .side img {
+    .photo img {
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
@@ -53,79 +78,100 @@
       background: var(--line);
       display: block;
     }
-    .links {
-      list-style: none;
-      padding: 0;
-      margin: 1.25rem 0 0;
-      font-size: 0.9rem;
-    }
-    .links li { padding: 0.35rem 0; border-top: 1px solid var(--line); }
-    .links li:last-child { border-bottom: 1px solid var(--line); }
-    a { color: var(--accent); text-underline-offset: 3px; }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
     h1 {
       font-family: "Source Serif 4", Georgia, serif;
       font-weight: 600;
-      font-size: 2.8rem;
-      line-height: 1.1;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.08;
       letter-spacing: -0.01em;
       margin: 0 0 0.5rem;
     }
-    .role { color: var(--muted); margin: 0 0 2rem; }
-    .bio { max-width: 62ch; }
-    .bio p { margin: 0 0 1.1rem; }
+    .role { color: var(--muted); margin: 0 0 1.25rem; }
+    .icons {
+      list-style: none;
+      display: flex;
+      gap: 1.1rem;
+      padding: 0;
+      margin: 0 0 2.25rem;
+    }
+    .icons a {
+      display: inline-flex;
+      color: var(--ink);
+      transition: color 0.15s;
+    }
+    .icons a:hover { color: var(--accent); }
+    .icons svg { width: 26px; height: 26px; }
+    .bio { max-width: 68ch; font-size: 1.05rem; }
+    .bio p { margin: 0 0 1.2rem; }
     .btn {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.3rem;
+      margin-top: 0.75rem;
+      padding: 0.75rem 1.4rem;
       background: var(--accent);
       color: var(--accent-ink);
       text-decoration: none;
       font-weight: 500;
       border-radius: 3px;
     }
-    .btn:hover { filter: brightness(1.1); }
-    footer {
-      grid-column: 1 / -1;
-      color: var(--muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--line);
-      padding-top: 1rem;
-    }
-    @media (max-width: 720px) {
-      main { grid-template-columns: 1fr; gap: 2rem; padding-top: 8vh; }
-      .side img { max-width: 220px; }
-      h1 { font-size: 2.2rem; }
+    .btn:hover { filter: brightness(1.12); }
+
+    @media (max-width: 760px) {
+      main { grid-template-columns: 1fr; }
+      .photo img { max-width: 240px; }
     }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">Félix Lenoël</a>
+      <nav>
+        <a href="cv_lenoel.pdf" download>CV</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <aside class="side">
-      <img src="photo.jpg" alt="Portrait of Your Name">
-      <ul class="links">
-        <li><a href="mailto:your.email@university.edu">your.email@university.edu</a></li>
-        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-        <li><a href="https://ideas.repec.org/">RePEc / IDEAS</a></li>
-        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-      </ul>
-    </aside>
+    <div class="photo">
+      <img src="photo.jpg" alt="Portrait of Félix Lenoël">
+    </div>
 
     <section>
-      <h1>Your Name</h1>
-      <p class="role">Position, Department of Economics, Institution</p>
+      <h1>Félix Lenoël</h1>
+      <p class="role">Predoctoral Researcher, Bocconi University</p>
+
+      <ul class="icons">
+        <li>
+          <a href="mailto:felix.lenoel@ens-lyon.fr" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
+              <path d="M3 6.5l9 7 9-7"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://bsky.app/profile/YOUR-HANDLE.bsky.social" aria-label="Bluesky" title="Bluesky">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
 
       <div class="bio">
-        <p>I am an economist working on labor and public economics. My research focuses on minimum wage policy and how taxes and transfers shape the incentives that workers face.</p>
-        <p>I am currently based in Milan, Italy. Before this, I [add a sentence about your background: PhD, previous positions, where you studied].</p>
-        <p>You can reach me by email at <a href="mailto:your.email@university.edu">your.email@university.edu</a>.</p>
+        <p>I work at the intersection of labor economics and public economics, with a specific focus on the effects of minimum wages and on public policies targeting low-wage workers.</p>
+        <p>I am a predoctoral researcher at Bocconi University, affiliated with the <a href="https://YOUR-ERC-PAGE-URL">ERC project LIFT-UP</a>, led by Giulia Giupponi. I am completing an M.Sc. in Advanced Economics at the École Normale Supérieure de Lyon, where I also worked as a research assistant at the Center for Economic Research on Governance, Inequality and Conflict (CERGIC).</p>
       </div>
 
-      <a class="btn" href="cv.pdf" download>Download my CV (PDF)</a>
+      <a class="btn" href="cv_lenoel.pdf" download>Download my CV (PDF)</a>
     </section>
-
-    <footer>Last updated: November 2026</footer>
   </main>
 </body>
 </html>
